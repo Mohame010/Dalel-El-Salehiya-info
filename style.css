@@ -1,0 +1,128 @@
+:root {
+    /* تم تحديث الألوان هنا لتسمع في كامل الموقع */
+    --primary: #03819B;       /* اللون البترولي الأساسي */
+    --primary-dark: #025a6b;  /* درجة أغمق للظلال */
+    --secondary: #0f172a;     /* الكحلي الغامق للخلفيات والنصوص */
+    --accent: #DC0C49;        /* الأحمر الاحترافي للأزرار والتميز */
+    --glass: rgba(255, 255, 255, 0.8);
+    --text-main: #1e293b;
+    --text-light: #64748b;
+    --white: #ffffff;
+    --light-bg: #F9FAFB;
+}
+
+/* الأكواد التالية بقيت كما هي مع ربطها بالألوان الجديدة تلقائياً */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
+html { scroll-behavior: smooth; }
+body { background: #fdfdfd; color: var(--text-main); overflow-x: hidden; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+.bg-light { background: var(--light-bg); padding: 80px 0; border-radius: 40px; margin: 60px 0; }
+
+/* Navbar - Glassmorphism */
+nav {
+    position: fixed; width: 100%; top: 0; z-index: 2000;
+    padding: 15px 0; background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+.nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+.logo { font-size: 1.8rem; font-weight: 900; color: var(--secondary); text-decoration: none; letter-spacing: 1px; }
+.logo span { color: var(--primary); }
+.nav-links { display: flex; list-style: none; gap: 25px; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--secondary); font-weight: 700; transition: 0.3s; }
+.btn-nav { background: var(--primary); color: #fff !important; padding: 10px 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(3, 129, 155, 0.3); }
+
+/* Hero Section */
+.hero { 
+    padding: 180px 0 100px; min-height: 100vh; position: relative; 
+    display: flex; align-items: center; overflow: hidden;
+}
+.hero-bg-shapes .shape { position: absolute; filter: blur(80px); z-index: -1; border-radius: 50%; }
+.s1 { width: 400px; height: 400px; background: rgba(3, 129, 155, 0.15); top: -100px; right: -100px; }
+.s2 { width: 300px; height: 300px; background: rgba(220, 12, 73, 0.1); bottom: -50px; left: -50px; }
+
+.hero-flex { display: flex; flex-wrap: wrap; align-items: center; gap: 60px; }
+.hero-text { flex: 1.2; min-width: 320px; }
+.badge { background: #e0f2f1; color: var(--primary); padding: 6px 15px; border-radius: 50px; font-weight: 800; font-size: 0.8rem; margin-bottom: 20px; display: inline-block; }
+.hero-text h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 25px; }
+.gradient-text { background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+/* شبكة أزرار المتاجر */
+.hero-btns-grid { 
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
+    gap: 12px; max-width: 500px; margin-bottom: 30px;
+}
+.store-btn-small {
+    background: var(--secondary); color: #fff; padding: 12px; 
+    border-radius: 12px; text-decoration: none; font-weight: 700; 
+    font-size: 0.8rem; display: flex; align-items: center; justify-content: center; 
+    gap: 8px; transition: 0.3s; text-align: center;
+}
+.store-btn-small:hover { transform: translateY(-3px); background: var(--primary); }
+
+/* 3D Mockup */
+.hero-image { flex: 0.8; display: flex; justify-content: center; position: relative; }
+.mockup-3d-small {
+    width: 240px; aspect-ratio: 9/19; background: #000; border: 12px solid #1e293b;
+    border-radius: 40px; overflow: hidden; box-shadow: 0 50px 100px rgba(0,0,0,0.2);
+    transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
+    transition: 0.5s; animation: float 5s infinite ease-in-out;
+}
+.mockup-3d-small:hover { transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.05); }
+.mockup-3d-small img { width: 100%; height: 100%; object-fit: cover; }
+
+/* About Section */
+.about-section { padding: 60px 5%; margin-top: -60px; position: relative; z-index: 100; }
+.about-card { padding: 40px; border-radius: 30px; background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 20px 40px rgba(0,0,0,0.03); }
+.about-content { text-align: center; max-width: 800px; margin: 0 auto; }
+.about-content p { color: var(--text-light); line-height: 1.8; margin: 20px 0; }
+.about-inline-img { width: 100%; max-width: 300px; border-radius: 15px; margin-top: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+
+/* Stats */
+.stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; padding: 60px 5%; margin-top: 0; }
+.stat-card { background: white; padding: 30px; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); text-align: center; min-width: 220px; }
+.circle-box { position: relative; width: 130px; height: 130px; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; }
+.circle-box svg { position: absolute; width: 130px; height: 130px; transform: rotate(-90deg); }
+.circle-box circle { fill: none; stroke: #f1f5f9; stroke-width: 10; cx: 65; cy: 65; r: 60; }
+.circle-box .prog { stroke: var(--primary); stroke-dasharray: 377; stroke-dashoffset: 377; transition: 2s; stroke-linecap: round; }
+.stat-val { font-size: 1.8rem; font-weight: 900; color: var(--secondary); }
+
+/* Features */
+.features { padding: 100px 5%; text-align: center; }
+.title { font-size: 2.5rem; font-weight: 900; margin-bottom: 50px; }
+.title span { color: var(--primary); }
+.feat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.feat-card { background: #fff; padding: 50px 30px; border-radius: 35px; border: 1px solid #f1f5f9; transition: 0.4s; }
+.feat-card:hover { border-color: var(--primary); transform: translateY(-15px); box-shadow: 0 30px 60px rgba(0,0,0,0.05); }
+.icon-box { width: 70px; height: 70px; background: #e0f2f1; color: var(--primary); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 30px; margin: 0 auto 25px; }
+
+.teachers-bg { background: var(--secondary); color: #fff; border-radius: 60px 60px 0 0; }
+.glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); color: #fff; }
+
+/* Contact */
+.contact-box { display: flex; flex-wrap: wrap; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 40px; overflow: hidden; margin: 100px auto; color: #fff; }
+.c-info { flex: 1; padding: 60px; min-width: 300px; }
+.c-form { flex: 1.5; padding: 60px; background: #fff; min-width: 320px; border-radius: 40px 0 0 40px; }
+.c-form input, .c-form textarea { width: 100%; padding: 18px; margin-bottom: 20px; border-radius: 15px; border: 1px solid #e2e8f0; outline: none; background: #f8fafc; font-size: 1rem; }
+.btn-send { width: 100%; padding: 20px; background: var(--accent); color: #fff; border: none; border-radius: 15px; font-weight: 900; cursor: pointer; font-size: 1.1rem; box-shadow: 0 10px 20px rgba(220, 12, 73, 0.3); }
+
+/* واتساب عائم */
+.wa-float-container { position: fixed; bottom: 30px; right: 30px; z-index: 3000; display: flex; flex-direction: column; align-items: flex-end; }
+.wa-float-btn { width: 60px; height: 60px; background: #25d366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; text-decoration: none; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); transition: 0.3s; animation: pulse-wa 2s infinite; }
+.wa-float-btn:hover { transform: scale(1.1); background: #128c7e; }
+.wa-tooltip { background: var(--secondary); color: white; padding: 8px 15px; border-radius: 10px; font-size: 0.85rem; font-weight: 700; margin-bottom: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); position: relative; animation: fade-in-up 1s ease-out; white-space: nowrap; }
+.wa-tooltip::after { content: ''; position: absolute; bottom: -8px; right: 20px; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 8px solid var(--secondary); }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero { text-align: center; padding-top: 140px; }
+    .hero-flex { flex-direction: column-reverse; }
+    .hero-btns-grid { justify-content: center; max-width: 100%; }
+    .mockup-3d-small { transform: none; width: 220px; }
+    .c-form { border-radius: 0; }
+    .about-section { margin-top: 0; }
+}
+
+@keyframes float { 0%, 100% { transform: perspective(1000px) rotateY(-15deg) translateY(0); } 50% { transform: perspective(1000px) rotateY(-15deg) translateY(-25px); } }
+@keyframes pulse-wa { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+@keyframes fade-in-up { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
